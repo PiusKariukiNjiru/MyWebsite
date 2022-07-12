@@ -1,18 +1,21 @@
 
+
+
 body {
   font-family: "Open Sans", sans-serif;
-  color: #1a1931;
+  color: #ececf1;
 }
 
 a {
-  color: #149ddd;
+  color: #84d4fa;
   text-decoration: none;
   
 }
 
 a:hover {
-  color: #37b3ed;
+  color: #93a04c;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -244,6 +247,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* handswipe animation */
+@keyframes swipe {
+
+
+  0% {
+      margin:0;
+      transform: rotate(0deg);
+  }
+
+  100% {
+      margin-right:20px;
+      
+      transform: translateY(40px);
+  }
+
+
+
+}
+
+.handswipe {
+  animation:         swipe 1s alternate infinite; /* IE 10+, Fx 29+ */
+  animation-timing-function: ease;
+  position: absolute;
+  bottom: 95px;
+  width: 50px;
+  right: 50%;
+  top:60%;
+}
+@media (min-width: 960px) {
+  .handswipe{
+    display: none;
+  }
+
+}
+
+
+
+
+
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -253,7 +296,19 @@ section {
 }
 
 .section-bg {
-  background: #f5f8fd;
+  background: linear-gradient(rgba(62, 10, 82, 0.7),rgba(2, 4, 12, 0.7)),url("../img/pius.jpeg") top center;
+  background-size: cover;
+  
+}
+
+.section-bgd {
+  background: linear-gradient(rgba(25, 4, 43, 0.7),rgba(4,9,30,0.7)),url("../img/new_york_jp7mhb.jfif") top center;
+  background-size: cover;
+}
+
+.section-bgds {
+  background: linear-gradient(rgba(4, 8, 27, 0.7),rgba(4,9,30,0.7)),url("../img/new_york.jfif") top center;
+  background-size: cover;
 }
 
 .section-title {
@@ -265,7 +320,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: #5c9efa;
 }
 .section-title h2::after {
   content: "";
@@ -273,12 +328,14 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #149ddd;
+  background: #6ccffd;
   bottom: 0;
   left: 0;
 }
 .section-title p {
   margin-bottom: 0;
+  color: greenyellow;
+
 }
 
 /*--------------------------------------------------------------
@@ -287,7 +344,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: #f3f5f7;
 }
 .about .content ul {
   list-style: none;
@@ -333,7 +390,7 @@ section {
   line-height: 40px;
   display: block;
   font-weight: 700;
-  color: #050d18;
+  color:white;
   margin-left: 60px;
 }
 .facts .count-box p {
@@ -341,23 +398,23 @@ section {
   margin: 0 0 0 60px;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-  color: #122f57;
+  color: #eff2f5;
 }
 .facts .count-box a {
   font-weight: 600;
   display: block;
   margin-top: 20px;
-  color: #122f57;
+  color: #e7eaee;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   transition: ease-in-out 0.3s;
 }
 .facts .count-box a:hover {
-  color: #1f5297;
+  color: #606264;
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -372,7 +429,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #050d18;
+  color: #d0d6df;
 }
 .skills .progress .skill .val {
   float: right;
@@ -389,6 +446,7 @@ section {
   background-color: #149ddd;
 }
 
+
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
@@ -397,7 +455,7 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #050d18;
+  color: #5198fc;
 }
 .resume .resume-item {
   padding: 0 0 20px 20px;
@@ -411,12 +469,12 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #050d18;
+  color: #e7ebf0;
   margin-bottom: 10px;
 }
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #e4edf9;
+  background: #026ffd;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -456,8 +514,8 @@ section {
 
 .certs-btn {
   margin: 0 10 0 15px;
-  border: 2px solid rgb(35, 82, 136);
-  color: rgb(35, 82, 136);
+  border: 2px solid rgb(166, 182, 123);
+  color: rgb(200, 230, 130);
   border-radius: 50px;
   padding: 8px 25px;
   
@@ -466,16 +524,22 @@ section {
   letter-spacing: 1px;
   transition: 0.4s;
   margin-top: 10px;
+  margin-left: 20px;
 }
 .certs-btn:hover {
   background: rgb(35, 82, 136);
   color: #fff;
+  box-shadow: 0 0 10px white;
+  transition: 0.4s;
   
 }
 @media (max-width: 600px) {
   .certs-btn {
-    margin: 0 15px 0 0;
-    padding: 8px 20px;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    
+
     
     
 
@@ -574,6 +638,9 @@ section {
 --------------------------------------------------------------*/
 .portfolio-details {
   padding-top: 40px;
+  background: linear-gradient(rgba(25, 4, 43, 0.7),rgba(4,9,30,0.7)),url("../img/new_york_jp7mhb.jfif") top center;
+  background-size: cover;
+  
 }
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
@@ -602,14 +669,17 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
+  color: #f5f6f8;
 }
 .portfolio-details .portfolio-info ul {
   list-style: none;
   padding: 0;
   font-size: 15px;
+  color: #f5f6f8;
 }
 .portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
+  color: #f5f6f8;
 }
 .portfolio-details .portfolio-description {
   padding-top: 30px;
@@ -659,7 +729,7 @@ section {
   font-size: 18px;
 }
 .services .title a {
-  color: #343a40;
+  color: #c0dbf7;
 }
 .services .title a:hover {
   color: #149ddd;
@@ -690,7 +760,7 @@ section {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  color: #111;
+  color: rgb(247, 241, 241);
 }
 .testimonials .testimonial-item h4 {
   font-size: 14px;
@@ -698,7 +768,7 @@ section {
   margin: 0;
 }
 .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: #c3e8fa;
+  color: #5e5f5f;
   font-size: 26px;
 }
 .testimonials .testimonial-item .quote-icon-left {
@@ -716,11 +786,12 @@ section {
   font-style: italic;
   margin: 0 15px 15px 15px;
   padding: 20px;
-  background: #fff;
+  background: rgb(243, 188, 188);
   position: relative;
   margin-bottom: 35px;
   border-radius: 6px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  color: #173b6c;
 }
 .testimonials .testimonial-item p::after {
   content: "";
@@ -756,9 +827,9 @@ section {
 }
 .contact .info {
   padding: 30px;
-  background: #fff;
+  background: rgb(14, 13, 13);
   width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 24px 0 rgba(36, 36, 36, 0.12);
 }
 .contact .info i {
   font-size: 20px;
@@ -778,13 +849,13 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #050d18;
+  color:white;
 }
 .contact .info p {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
   font-size: 14px;
-  color: #173b6c;
+  color: goldenrod;
 }
 .contact .info .email p {
   padding-top: 5px;
@@ -817,8 +888,8 @@ section {
 .contact .php-email-form {
   width: 100%;
   padding: 30px;
-  background: #fff;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  background: rgb(14, 1, 1);
+  box-shadow: 0 0 24px 0 rgba(172, 169, 169, 0.12);
 }
 .contact .php-email-form .form-group {
   padding-bottom: 8px;
@@ -917,7 +988,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 20px 0;
-  background: #f9f9f9;
+  background: linear-gradient(#420858, #0e0113) ;
 }
 .breadcrumbs h2 {
   font-size: 26px;
@@ -1011,3 +1082,4 @@ section {
 #hero .btn-book {
   margin-left: 15px;
 }
+
